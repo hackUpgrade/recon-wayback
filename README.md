@@ -1,15 +1,16 @@
-# Wayback Recon
+# Recon Wayback Machine
 
 Mapa histórico de um domínio: consulta a [Wayback Machine](https://web.archive.org/) (CDX API), coleta as URLs arquivadas e destaca as superfícies de ataque interessantes (admin, login, API, backups, arquivos sensíveis, entre outros..)
 
-> ⚠️ **Reconhecimento PASSIVO**: nunca toca no site alvo — apenas consulta o arquivo público da Wayback Machine. 
+> ⚠️ **Reconhecimento PASSIVO**: nunca toca no site alvo > apenas consulta o arquivo público da Wayback Machine. 
 
-## O que faz (resumido)
-
+## O que faz
 - Busca as URLs históricas do domínio na Wayback Machine.
 - Remove duplicadas, normaliza e classifica as interessantes (`ADMIN`, `LOGIN`, `API`, `ENV`, `SQL`, `BACKUP`, `ARCHIVE`, `JAVASCRIPT`, `CONFIG`, ...).
-- Opcional: baixa cópias arquivadas e extrai os links **de dentro** delas (`--extract-links`) — descobre rotas que nunca foram capturadas como URL.
+- extras: baixa cópias arquivadas e extrai os links **de dentro** delas (`--extract-links`) > descobre rotas que nunca foram capturadas como URL.
 - Exporta tudo em JSON e mostra um resumo bonito no terminal (Rich).
+- As categorias são apenas uma estimativa
+- Domínios grandes podem demorar; ajuste `--limit` / `--timeout`.
 
 ## Instalação
 
@@ -53,15 +54,12 @@ wayback-recon scan exemplo.com -o resultado.json
 ╰───────────────────────────────────────────────────────────────────────────╯
 LOGIN
 https://exemplo.com/wp-login.php
+https://exemplo.com/admin-interno/
 
 API
 https://exemplo.com/wp-json/wp/v2/users
+https://exemplo.com/old-api/users
 ```
-
-## Importante
-
-- As categorias são heurísticas — revise os resultados manualmente.
-- Domínios grandes podem demorar; ajuste `--limit` / `--timeout`.
 
 ## Licença
 
