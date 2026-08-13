@@ -1,8 +1,8 @@
 # Wayback Recon
 
-Mapa histórico de um domínio: consulta a [Wayback Machine](https://web.archive.org/) (CDX API), coleta as URLs arquivadas e destaca as superfícies de ataque interessantes (admin, login, API, backups, arquivos sensíveis, JavaScript...).
+Mapa histórico de um domínio: consulta a [Wayback Machine](https://web.archive.org/) (CDX API), coleta as URLs arquivadas e destaca as superfícies de ataque interessantes (admin, login, API, backups, arquivos sensíveis, entre outros..)
 
-> ⚠️ **Reconhecimento PASSIVO**: nunca toca no site alvo — apenas consulta o arquivo público da Wayback Machine. Use somente em domínios que você tem AUTORIZAÇÃO para testar.
+> ⚠️ **Reconhecimento PASSIVO**: nunca toca no site alvo — apenas consulta o arquivo público da Wayback Machine. 
 
 ## O que faz (resumido)
 
@@ -62,7 +62,6 @@ https://exemplo.com/wp-json/wp/v2/users
 
 - As categorias são heurísticas — revise os resultados manualmente.
 - Domínios grandes podem demorar; ajuste `--limit` / `--timeout`.
-- Ferramenta educacional para testes autorizados e OSINT.
 
 ## Licença
 
